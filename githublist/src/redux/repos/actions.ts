@@ -2,12 +2,22 @@ import { FETCH_ALL_REPOS, SET_LOADING, SET_ERROR, SET_REPOS } from "./types";
 
 import { testGetRepos } from "../../api";
 
-export const fetchAllRepos = () => {
+export const fetchAllRepos = (search: string) => {
   return (dispatch: any) => {
     dispatch(setLoading());
     testGetRepos()
       .then((res) => {
-        dispatch(setRepos(res.data.data.user.repositories.edges));
+        const repos = res.data.data.user.repositories.edges;
+        if (search.length > 0) {
+          const filteredRepos = repos.filter((repo: any) => {
+            return repo.node.name
+              .toLowerCase()
+              .startsWith(search.toLowerCase());
+          });
+          dispatch(setRepos(filteredRepos));
+        } else {
+          dispatch(setRepos(repos));
+        }
       })
       .catch((err) => {
         dispatch(setError(err));

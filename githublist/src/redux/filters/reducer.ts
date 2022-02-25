@@ -1,11 +1,14 @@
-import initialState from "../repos/states";
+import initialState from "./states";
+import { AnyAction } from "@reduxjs/toolkit";
 
-const FilterReducer = (state = initialState, action: any) => {
+import { SET_SEARCH } from "./types";
+
+const FilterReducer = (state = initialState, action: AnyAction) => {
   switch (action.type) {
-    case "SET_FILTER":
+    case SET_SEARCH:
       return {
         ...state,
-        filters: action.payload,
+        search: action.payload,
       };
     default:
       return state;

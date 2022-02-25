@@ -3,8 +3,6 @@ import env from "react-dotenv";
 export const GITHUB_API: string = "https://api.github.com/graphql";
 export const AUTH_TOKEN = env.REACT_APP_AUTH_TOKEN;
 export const GITHUB_USERNAME = "SRL132";
-console.log(GITHUB_USERNAME);
-console.log(AUTH_TOKEN);
 export const QUERY_HEADERS = {
   Authorization: `bearer ${AUTH_TOKEN}`,
   "Content-Type": "application/json",
