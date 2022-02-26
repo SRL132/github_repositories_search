@@ -14,10 +14,10 @@ function withLayout(WrappedComponent: React.ComponentType<any>) {
 
   function WrapperComponent({ ...props }) {
     return (
-      <>
+      <main>
         <Header />
         <WrappedComponent {...props} />
-      </>
+      </main>
     );
   }
 

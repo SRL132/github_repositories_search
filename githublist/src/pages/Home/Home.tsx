@@ -6,6 +6,7 @@ import { useAppSelector } from "../../redux/hooks";
 import { RootState } from "../../redux/store";
 
 import RepoList from "../../components/UI/molecules/RepoList";
+import Filters from "../../components/UI/molecules/Filters";
 import withLayout from "../../components/UI/HOC/withLayout";
 
 const Home = () => {
@@ -18,9 +19,10 @@ const Home = () => {
     dispatch(fetchAllRepos(search));
   }, [dispatch, search]);
   return (
-    <div>
+    <section>
+      <Filters />
       <RepoList />
-    </div>
+    </section>
   );
 };
 
