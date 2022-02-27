@@ -3,6 +3,7 @@ import { useSelector } from "react-redux";
 import { Link, NavLink } from "react-router-dom";
 
 import SearchBar from "../../atoms/SearchBar";
+
 export default function NavBar() {
   const repos = useSelector((state: any) => {
     return state.repos;
@@ -10,9 +11,9 @@ export default function NavBar() {
   const reposCount = repos.reposList.length;
 
   return (
-    <nav className="border-b">
-      <ul className="flex items-center text-sm">
-        <li>
+    <nav className="border-b px-3 sm:px-4 py-2.5">
+      <ul className="flex flex-col sm:flex-row items-center text-sm justify-center">
+        <li className="mx-4 my-6 md:my-0">
           <a
             href="#"
             className="flex items-center space-x-2 py-2 px-3 border-b-2 active:border-red-400 font-semibold hover:border-gray-400 transition ease-in-out duration-150"
@@ -37,11 +38,15 @@ export default function NavBar() {
           </a>
         </li>
 
-        <li>
+        <li className="mx-4 my-6 md:my-0">
           <NavLink
             id="/"
             to="/"
-            className="flex items-center space-x-2 py-2 px-3 border-b-2  visited:border-red-400 font-semibold hover:border-gray-400 transition ease-in-out duration-150"
+            className={(isActive) =>
+              `flex items-center space-x-2 py-2 px-3 border-b-2  hover:border-gray-400 transition ease-in-out duration-150 ${
+                isActive ? "border-red-400" : undefined
+              }`
+            }
           >
             <span className="text-gray-600">
               <svg
@@ -65,7 +70,7 @@ export default function NavBar() {
             </span>
           </NavLink>
         </li>
-        <li>
+        <li className="mx-4 my-6 md:my-0">
           <a
             href="#"
             className="flex items-center space-x-2 py-2 px-3 border-b-2 active:border-red-400 font-semibold hover:border-gray-400 transition ease-in-out duration-150"

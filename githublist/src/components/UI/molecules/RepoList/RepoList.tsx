@@ -13,10 +13,10 @@ export default function RepoList() {
   });
   const search = filters.search;
   return (
-    <div>
+    <div className="flex flex-col gap-y-2 w-full sm:w-1/1 md:w-1/1 max-w-sm rounded-lg p-2 shadow-md bg-gray-100 text-left characters">
       {search.lenth > 0 && <SearchResults />}
 
-      <ul>
+      <ul className="w-full">
         {repos.reposList.map((repo: any) => {
           return (
             <li key={repo.node.id} className="border-b">

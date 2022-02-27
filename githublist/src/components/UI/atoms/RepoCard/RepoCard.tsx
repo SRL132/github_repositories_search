@@ -12,7 +12,7 @@ export default function RepoCard(props: {
   // forkCount: number;
 }) {
   return (
-    <div className="grid grid-cols-2">
+    <div className="flex flex-row justify-between ">
       <div>
         <div className="d-inline-block mb-1">
           <h3 className="wb-break-all">
@@ -54,7 +54,7 @@ export default function RepoCard(props: {
       <div>
         <div className="right-0">
           <GitHubButton
-            // href="https://github.com/ntkme/github-buttons"
+            href="#"
             data-icon="octicon-star"
             aria-label="Star ntkme/github-buttons on GitHub"
           >

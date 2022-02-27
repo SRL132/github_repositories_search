@@ -19,7 +19,7 @@ const Home = () => {
     dispatch(fetchAllRepos(search));
   }, [dispatch, search]);
   return (
-    <section>
+    <section className="flex flex-col items-center gap-y-2">
       <Filters />
       <RepoList />
     </section>
