@@ -10,6 +10,21 @@ const ReposReducer = (state = initialState, action: AnyAction) => {
         ...state,
         reposList: action.payload,
       };
+    case SET_LOADING:
+      return {
+        ...state,
+        isLoading: action.payload,
+      };
+    case SET_ERROR:
+      return {
+        ...state,
+        loadingError: action.payload,
+      };
+    case FETCH_ALL_REPOS:
+      return {
+        ...state,
+        allRepos: action.payload,
+      };
 
     default:
       return state;

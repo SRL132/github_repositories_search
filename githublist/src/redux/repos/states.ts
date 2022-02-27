@@ -14,6 +14,7 @@ interface Repo {
 
 interface RepoState {
   reposList: Repo[];
+  allRepos: Repo[];
   isLoading: boolean;
   loadingError: string;
 }
@@ -22,6 +23,7 @@ const initialState: RepoState = {
   reposList: [],
   isLoading: false,
   loadingError: "",
+  allRepos: [],
 };
 
 export default initialState;

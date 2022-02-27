@@ -1,8 +1,8 @@
 import env from "react-dotenv";
 
 export const GITHUB_API: string = "https://api.github.com/graphql";
-export const AUTH_TOKEN = env.REACT_APP_AUTH_TOKEN;
-export const GITHUB_USERNAME = "SRL132";
+export const AUTH_TOKEN: string = env.REACT_APP_AUTH_TOKEN;
+export const GITHUB_USERNAME: string = "SRL132";
 
 export const QUERY_HEADERS = {
   Authorization: `bearer ${AUTH_TOKEN}`,
@@ -37,32 +37,4 @@ export const GET_REPO_BODY = {
         }
       }
     }`,
-};
-
-export const QUERY_TO_TEST = {
-  query: `query{
-  user(login: "${GITHUB_USERNAME}"){
-    repositories(first:100,orderBy: {field: CREATED_AT, direction: DESC}) {
-      edges {
-        node {
-          id
-          description
-          updatedAt
-          languages {
-            edges {
-              node {
-                id
-              }
-            }
-          }
-          forkCount
-          name
-          openGraphImageUrl
-          url
-          stargazerCount
-        }
-      }
-    }
-  }
-}`,
 };

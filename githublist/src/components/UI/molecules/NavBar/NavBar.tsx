@@ -6,7 +6,7 @@ export default function NavBar() {
   const repos = useSelector((state: any) => {
     return state.repos;
   });
-  const reposCount = repos.reposList.length;
+  const reposCount = repos.allRepos.length;
 
   return (
     <nav className="border-b px-3 sm:px-4 py-2.5">

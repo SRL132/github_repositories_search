@@ -12,24 +12,36 @@ export default function RepoList() {
     return state.filters;
   });
   const search = filters.search;
+  const isLoading = repos.isLoading;
+  const error = repos.loadingError;
+  console.log(search);
+  console.log(repos);
   return (
-    <div className="flex flex-col gap-y-2 w-full sm:w-1/1 md:w-1/1 max-w-sm rounded-lg p-2 shadow-md bg-gray-100 text-left characters">
+    <div className="flex flex-col gap-y-2 w-full sm:w-1/1 md:w-1/1 max-w-sm rounded-lg p-2 shadow-md  text-left characters">
+      {isLoading && <div>Loading Repos...</div>}
+      {error && <div>{error}</div>}
       {search.lenth > 0 && <SearchResults />}
 
-      <ul className="w-full">
-        {repos.reposList.map((repo: any) => {
-          return (
-            <li key={repo.node.id} className="border-b">
-              <RepoCard
-                name={repo.node.name}
-                description={repo.node.description}
-                url={repo.node.url}
-                updatedAt={repo.node.updatedAt}
-              />
-            </li>
-          );
-        })}
-      </ul>
+      {repos.reposList.length > 0 ? (
+        <ul className="w-full">
+          {repos.reposList.map((repo: any) => {
+            return (
+              <li key={repo.node.id} className="border-b">
+                <RepoCard
+                  name={repo.node.name}
+                  description={repo.node.description}
+                  url={repo.node.url}
+                  updatedAt={repo.node.updatedAt}
+                  language={repo.node.primaryLanguage?.name}
+                  languageColor={repo.node.primaryLanguage?.color}
+                />
+              </li>
+            );
+          })}
+        </ul>
+      ) : (
+        <div>No Repos Found</div>
+      )}
     </div>
   );
 }
