@@ -26,10 +26,6 @@ export default function RepoList() {
                 url={repo.node.url}
                 updatedAt={repo.node.updatedAt}
               />
-              {/* {repo.node.description} {repo.node.url} */}
-              {/* <img ref={repo.node.openGraphImageUrl} /> */}
-              {/* {repo.node.stargazerCount} */}
-              {/* {repo.node.forkCount} */}
             </li>
           );
         })}

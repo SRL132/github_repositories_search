@@ -2,6 +2,17 @@ import React from "react";
 
 import GitHubButton from "react-github-btn";
 
+/**
+   * Returns a Card which displays the data in props.
+   * @param obj props: {
+   * name: string;
+   * description: string;
+   * url: string;
+     updatedAt: string;
+   * }  - The object to display in the card.
+   * 
+   */
+
 export default function RepoCard(props: {
   name: string;
   description: string;

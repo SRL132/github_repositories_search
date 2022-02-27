@@ -6,7 +6,6 @@ function getDisplayName(WrappedComponent: React.ComponentType<any>) {
   return WrappedComponent.displayName || WrappedComponent.name || "Component";
 }
 
-/* eslint no-param-reassign: [2, { "props": false }] */
 function withLayout(WrappedComponent: React.ComponentType<any>) {
   WrappedComponent.displayName = `withLayout(${getDisplayName(
     WrappedComponent
