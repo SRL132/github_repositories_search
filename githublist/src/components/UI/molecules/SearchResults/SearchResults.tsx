@@ -9,5 +9,16 @@ export default function SearchResults() {
   });
   const SearchCount = repos.reposList.length;
 
-  return <div>{SearchCount} Repo(s) found. </div>;
+  const handleClick = () => {
+    window.location.reload();
+  };
+
+  return (
+    <div>
+      {SearchCount} Repo(s) found.{" "}
+      <button className="font-bold" onClick={handleClick}>
+        X Clear Results
+      </button>
+    </div>
+  );
 }
