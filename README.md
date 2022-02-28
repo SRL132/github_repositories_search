@@ -5,11 +5,13 @@ React & Typescript responsive list which queries GitHub GraphQL api and includes
 
 # How to run
 
-1- Clone the repository by opening the console and writing the following command: git clone https://github.com/SRL132/github_repositories_search.git
+1- Clone the repository by opening the console and writing the following command: 
+
+git clone https://github.com/SRL132/github_repositories_search.git
 
 2- Make sure you are into the githublist folder and install the packages by running the following command on the console: yarn install.
 
-3-In order to run the project smoothly, you will need a GitHub access token (more on that here: https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/creating-a-personal-access-token), and create a .env file and assign your token to the variable REACT_APP_AUTH_TOKEN .
+3-In order to run the project smoothly, you will need a GitHub access token (more on that here: https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/creating-a-personal-access-token), and create a .env file, assign your token to the variable REACT_APP_AUTH_TOKEN and your GitHub username to the variable GITHUB_USERNAME.
 
 4- Start the project by running the following command: yarn start.
 
