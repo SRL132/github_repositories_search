@@ -3,12 +3,12 @@ interface Repo {
     id: number;
     description: string;
     updatedAt: string;
-    languages: {};
-    forkCount: number;
     name: string;
-    openGraphImageUrl: string;
     url: string;
-    stargazerCount: number;
+    primaryLanguage: {
+      color: string;
+      name: string;
+    };
   };
 }
 

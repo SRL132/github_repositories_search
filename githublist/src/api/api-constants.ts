@@ -12,22 +12,17 @@ export const QUERY_HEADERS = {
 export const GET_REPO_BODY = {
   query: `
     query{
-      user(login: "SRL132") {
+      user(login: "${GITHUB_USERNAME}") {
         repositories(orderBy: {field: UPDATED_AT, direction: DESC}, first: 100) {
           edges {
             node {
               id
               description
               updatedAt
-              forkCount
               name
-              openGraphImageUrl
               url
-              stargazerCount
               description
-              updatedAt
               primaryLanguage {
-                id
                 color
                 name
               }

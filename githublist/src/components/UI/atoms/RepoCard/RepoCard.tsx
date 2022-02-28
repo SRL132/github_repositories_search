@@ -2,6 +2,15 @@ import React from "react";
 
 import GitHubButton from "react-github-btn";
 
+interface RepoProps {
+  name: string;
+  description: string;
+  url: string;
+  language: string;
+  languageColor: string;
+  updatedAt: string;
+}
+
 /**
    * Returns a Card which displays the data in props.
    * @param obj props: {
@@ -9,21 +18,13 @@ import GitHubButton from "react-github-btn";
    * description: string;
    * url: string;
      updatedAt: string;
+   * language: string;
+   * languageColor: string;
    * }  - The object to display in the card.
    * 
    */
 
-export default function RepoCard(props: {
-  name: string;
-  description: string;
-  url: string;
-  updatedAt: string;
-  language: string;
-  languageColor: string;
-  // openGraphImageUrl: string;
-  // stargazerCount: number;
-  // forkCount: number;
-}) {
+export default function RepoCard(props: RepoProps) {
   const updatedAt = props.updatedAt;
   const updatedDaysAgo = Math.floor(
     (new Date().getTime() - new Date(updatedAt).getTime()) /
@@ -47,22 +48,19 @@ export default function RepoCard(props: {
           </p>
         </div>
         <div className="f6 color-fg-muted mt-2">
-          <span className="ml-0 mr-3">
-            <span className=" flex text-sm">{props.language}</span>
-          </span>
+          <span className=" flex text-sm">{props.language}</span>
           <span className="text-xs"> Updated {updatedDaysAgo} days ago</span>
         </div>
       </div>
-      <div>
-        <div className="right-0">
-          <GitHubButton
-            href="#"
-            data-icon="octicon-star"
-            aria-label="Star ntkme/github-buttons on GitHub"
-          >
-            Star
-          </GitHubButton>
-        </div>
+
+      <div className="right-0">
+        <GitHubButton
+          href="#"
+          data-icon="octicon-star"
+          aria-label="Star ntkme/github-buttons on GitHub"
+        >
+          Star
+        </GitHubButton>
       </div>
     </div>
   );

@@ -1,4 +1,5 @@
 import React from "react";
+
 import { useAppSelector } from "../../../../redux/hooks";
 import { RootState } from "../../../../redux/store";
 import RepoCard from "../../atoms/RepoCard";
@@ -14,8 +15,7 @@ export default function RepoList() {
   const search = filters.search;
   const isLoading = repos.isLoading;
   const error = repos.loadingError;
-  console.log(search);
-  console.log(repos);
+
   return (
     <div className="flex flex-col gap-y-2 w-full sm:w-1/1 md:w-1/1 max-w-sm rounded-lg p-2 shadow-md  text-left characters">
       {isLoading && <div>Loading Repos...</div>}

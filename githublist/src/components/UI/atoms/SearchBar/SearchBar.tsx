@@ -1,9 +1,10 @@
 import React, { useState } from "react";
-import { useDispatch } from "react-redux";
+
+import { useAppDispatch } from "../../../../redux/hooks";
 import { setSearch } from "../../../../redux/filters/actions";
 
 export default function SearchBar() {
-  const dispatch = useDispatch();
+  const dispatch = useAppDispatch();
   const [value, setValue] = useState("");
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -25,10 +26,6 @@ export default function SearchBar() {
           name="search"
           placeholder="Find a repository..."
         />
-        <button
-          type="submit"
-          className="absolute right-0 top-0 mt-5 mr-4"
-        ></button>
       </form>
     </div>
   );

@@ -1,8 +1,10 @@
 import React from "react";
-import { useSelector } from "react-redux";
+
+import { useAppSelector } from "../../../../redux/hooks";
+import { RootState } from "../../../../redux/store";
 
 export default function SearchResults() {
-  const repos = useSelector((state: any) => {
+  const repos = useAppSelector((state: RootState) => {
     return state.repos;
   });
   const SearchCount = repos.reposList.length;
