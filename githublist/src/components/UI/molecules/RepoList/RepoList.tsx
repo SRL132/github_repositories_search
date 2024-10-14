@@ -14,12 +14,10 @@ export default function RepoList() {
   });
   const search = filters.search;
   const isLoading = repos.isLoading;
-  const error = repos.loadingError;
 
   return (
     <div className="flex flex-col gap-y-2 w-full sm:w-1/1 md:w-1/1 max-w-sm rounded-lg p-2 shadow-md  text-left characters">
       {isLoading && <div>Loading Repos...</div>}
-      {error && <div>{error}</div>}
       {search.lenth > 0 && <SearchResults />}
 
       {repos.reposList.length > 0 ? (

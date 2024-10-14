@@ -25,13 +25,14 @@ export const fetchAllRepos = (search: string) => {
 
           dispatch(setRepos(filteredRepos));
         } else {
-          dispatch(setLoading(false));
           dispatch(setAllReposList(repos));
           dispatch(setRepos(repos));
+          dispatch(setLoading(false));
         }
       })
       .catch((err) => {
         dispatch(setError(err));
+        dispatch(setLoading(false));
       });
   };
 };
