@@ -13,7 +13,7 @@ export const GET_REPO_BODY = {
   query: `
     query{
       user(login: "${GITHUB_USERNAME}") {
-        repositories(orderBy: {field: UPDATED_AT, direction: DESC}, first: 100) {
+        repositories(privacy: PUBLIC, orderBy: {field: UPDATED_AT, direction: DESC}, first: 100) {
           edges {
             node {
               id
@@ -26,7 +26,6 @@ export const GET_REPO_BODY = {
                 color
                 name
               }
-           
             }
           }
         }
