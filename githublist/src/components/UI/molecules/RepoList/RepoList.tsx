@@ -38,7 +38,7 @@ export default function RepoList() {
           })}
         </ul>
       ) : (
-        <div>No Repos Found</div>
+        !isLoading && <div>No Repos Found</div>
       )}
     </div>
   );
